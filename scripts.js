@@ -300,8 +300,7 @@ function nextQuestion() {
 function storeUserAnswer(event, userAnswers) {
   userAnswers.push(event.target.innerHTML);
 
-  // user has chosen an option,
-  // don't wait, change the question
+
   timer = 10;
   timerDiv.innerHTML = timer;
   currentQuestionNumber++;
@@ -312,9 +311,6 @@ function storeUserAnswer(event, userAnswers) {
   }
 }
 
-//.............................................................................
-
-//calculate user answers
 function calculateScore(userAnswers, actualAnswers) {
   let score = 0;
   userAnswers.forEach((ua, index) => {
@@ -329,9 +325,7 @@ function calculateScore(userAnswers, actualAnswers) {
   totalScore.innerHTML = answer;
   totalScore.style.fontSize = "2rem";
   document.querySelector("#wrapper").append(totalScore);
-  // reStart.style.display = "flex";
 
-  //Restart..........
 
   let reStart = document.createElement("button");
   reStart.classList.add("reStart");
@@ -352,9 +346,7 @@ function calculateScore(userAnswers, actualAnswers) {
   //.........................................................................
 }
 
-//..............................................
 
-//remove images
 function removeImages() {
   const options = document.querySelectorAll(".option");
   options.forEach((option) => {
